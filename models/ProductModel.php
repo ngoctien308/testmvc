@@ -11,7 +11,19 @@ class ProductModel {
     
     public function getAll() {
         $productsQuery = $this->conn->query("select * from products");
-        $products = $productsQuery->fetch_all(MYSQLI_ASSOC);
-        return $products;
+        if ($productsQuery && $productsQuery->num_rows > 0) {
+            return $productsQuery->fetch_all(MYSQLI_ASSOC);
+        }
+
+        return [];
+    }
+
+    public function getById($id) {
+        $productsQuery = $this->conn->query("select * from products where id=".$id);
+        if ($productsQuery && $productsQuery->num_rows > 0) {
+            return $productsQuery->fetch_assoc();
+        }
+
+        return [];
     }
 }

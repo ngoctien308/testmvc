@@ -2,7 +2,7 @@
 include 'models/ProductModel.php';
 
 class ProductController {
-    const basePath = 'views/frontend/products';
+    const basePath = 'views/products';
     private $productModel;
 
     public function __construct() {
@@ -15,6 +15,7 @@ class ProductController {
     }
 
     public function show() {
-        echo '<h1>ProductController show</h1>';
+        $product = $this->productModel->getById($_GET['productId']);
+        include self::basePath.'/show.php';
     }
 }
