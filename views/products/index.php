@@ -1,4 +1,4 @@
-<div class='max-w-[700px] mx-auto'>
+<div class='max-w-[700px] mx-auto mb-4'>
     <form action="index.php?controller=product&action=add" method="POST">
         <label>Product name</label>
         <input class='form-control' required name="name" />
@@ -11,8 +11,8 @@
         <?php 
             foreach($products as $product) {
             echo '<div class="border p-2 rounded">
-            <h1>'.$product['name'].'</h1>
-            <p>'.$product['description'].'</p>
+            <h4 class="overflow-hidden text-ellipsis whitespace-nowrap">'.$product['name'].'</h4>
+            <p class="overflow-hidden text-ellipsis whitespace-nowrap">'.$product['description'].'</p>
             <a href="./index.php?controller=product&action=show&productId='.$product['id'].'">
                 <button class="btn btn-primary">View in detail</button>
             </a>
