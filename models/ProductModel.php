@@ -8,6 +8,11 @@ class ProductModel {
         $db = new Database();
         $this->conn = $db->getConnect();
     }
+
+    public function create($name, $description) {
+        $this->conn->query("insert into products(name,description) 
+        values('".$name."', '".$description."')");
+    }
     
     public function getAll() {
         $productsQuery = $this->conn->query("select * from products");
@@ -25,5 +30,9 @@ class ProductModel {
         }
 
         return [];
+    }
+
+    public function deleteById($id) {
+        $productsQuery = $this->conn->query("delete from products where id=".$id);      
     }
 }
