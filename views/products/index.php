@@ -14,7 +14,7 @@
             <h4 class="overflow-hidden text-ellipsis whitespace-nowrap">'.$product['name'].'</h4>
             <p class="overflow-hidden text-ellipsis whitespace-nowrap">'.$product['description'].'</p>
             <a href="./index.php?controller=product&action=show&productId='.$product['id'].'">
-                <button class="btn btn-primary">View in detail</button>
+                <button class="btn btn-primary">View Details</button>
             </a>
             <a href="./index.php?controller=product&action=delete&productId='.$product['id'].'">
                 <button class="btn btn-danger">Delete</button>
