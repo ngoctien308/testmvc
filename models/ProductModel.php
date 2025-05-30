@@ -1,5 +1,5 @@
 <?php
-require_once 'database.php';
+require_once 'utilities/database.php';
 
 class ProductModel {
     private $conn;

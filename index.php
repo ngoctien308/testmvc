@@ -1,6 +1,6 @@
 <?php
 
-require_once 'bootstrap.php';
+require_once 'utilities/bootstrap.php';
 
 // default: controller: product, action: index
 $controllerName = ucfirst($_GET['controller'] ?? 'product').'Controller';
